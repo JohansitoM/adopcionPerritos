@@ -1,23 +1,22 @@
 const registro = require('../models/registrosAdoptivosModel')
 
-const crearRegistro = async(req, res) => {
+const registrarAdopcion = async(adoptante, perro, fechaAdopcion) => {
     try {
-        const { nombre, area, poblacionTotal, capital, numeroMunicipios, pib, descripcion } = req.body;
-        const nuevosDatos = new dpto({nombre, area, poblacionTotal, capital, numeroMunicipios, pib, descripcion})
-        await nuevosDatos.save();
-        res.json({mensaje: nuevosDatos})
+        const registroDatos = new registro({adoptante, perro, fechaAdopcion})
+        await registroDatos.save();
+        return { mensaje: registroDatos }
     } catch(e) {
-        res.status(500).json({mensaje: "Error al ingresar departamento"})
+        throw new Error("Error al crear el registro " + e.message)
     }
 }
 
 const mostrarRegistros = async( req, res) => {
     try {
-        const departaments = await dpto.find()
-        res.json(departaments)
+        const registros = await registro.find()
+        res.json(registros)
     } catch (e) {
-        res.status(500).json({mensajito: "Error al obtener los departamentos", error: e})
+        res.status(500).json({mensajito: "Error al obtener los registros", error: e})
     }
 }
 
-module.exports = { crearRegistro, mostrarRegistros }
+module.exports = { registrarAdopcion, mostrarRegistros }

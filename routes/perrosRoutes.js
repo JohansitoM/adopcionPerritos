@@ -6,6 +6,6 @@ router.post('/perros', perrosController.ingresarPerrito)
 
 router.get('/perros', perrosController.mostrarPerritosDisponibles)
 
-router.put('/perros', perrosController.actualizarPerritoInfo)
+router.put('/perros/:id', perrosController.actualizarPerritoInfo)
 
 module.exports = router

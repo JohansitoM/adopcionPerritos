@@ -6,6 +6,9 @@ const PORT = process.env.PORT || 3000
 const perrosRoutes = require('./routes/perrosRoutes')
 const adoptantesRoutes = require('./routes/adoptantesRoutes')
 const registrosRoutes = require('./routes/registrosRoutes')
+const conexionDB = require('./config/config')
+
+conexionDB()
 
 app.use(express.json())
 
@@ -14,5 +17,5 @@ app.use('/api', adoptantesRoutes)
 app.use('/api', registrosRoutes)
 
 app.listen(PORT, () => {
-    console.log(`Servidor listo en el puerto ${PORT} :B`)
+    console.log(`Servidor listo en el puerto ${PORT} :]`)
 })

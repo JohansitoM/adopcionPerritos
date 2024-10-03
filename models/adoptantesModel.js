@@ -3,19 +3,23 @@ const mongoose = require('mongoose')
 const adoptantesSchema = new mongoose.Schema({
     nombre: {
         type: String,
-        require: true
+        required: true
     },
     correo: {
         type: String,
-        require: true
+        required: true
     },
     telefono: {
         type: String,
-        require: true
+        required: true
     },
     direccion: {
         type: String,
-        require: true
+        required: true
+    },
+    mascotasAdoptadas: {
+        type: Array,
+        required: false
     }
 })
 

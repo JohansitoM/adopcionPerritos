@@ -3,23 +3,23 @@ const mongoose = require('mongoose')
 const perrosSchema = new mongoose.Schema({
     nombre: {
         type: String,
-        require: true
+        required: true
     },
     raza: {
         type: String,
-        require: true
+        required: true
     },
     edad: {
         type: Number,
-        require: true
+        required: true
     },
     size: {
         type: String,
-        require: true
+        required: true
     },
     adopcionDisponible: {
         type: Boolean,
-        require: true
+        required: true
     }
 })
 

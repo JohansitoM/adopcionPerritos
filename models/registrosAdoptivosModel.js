@@ -2,16 +2,16 @@ const mongoose = require('mongoose')
 
 const registrosSchema = new mongoose.Schema({
     adoptante: {
-        type: Mixed,
-        require: true
+        type: mongoose.Schema.Types.Mixed,
+        required: true
     },
     perro: {
-        type: Mixed,
-        require: true
+        type: mongoose.Schema.Types.Mixed,
+        required: true
     },
     fechaAdopcion: {
         type: Date,
-        require: true
+        required: true
     }
 })
 
